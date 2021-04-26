@@ -125,20 +125,19 @@ struct LoggedInView: View {
             }
             .navigationTitle("Welcome")
             .navigationBarTitleDisplayMode( .large)
-            .navigationBarItems( // better: toolbarItem
-                trailing:
-                    HStack {
-
-                        Button(action: {
-                            showUserFormView = true
-                        }) {
-                            Image(systemName: "person.badge.plus")
-                                .font(.largeTitle)
-                        }.foregroundColor(.gray)
-                    })
+            .toolbar {
+                ToolbarItemGroup(placement: .navigationBarTrailing) {
+                    Button(action: {
+                        showUserFormView = true
+                    }) {
+                        Image(systemName: "person.badge.plus")
+                            .font(.largeTitle)
+                    }.foregroundColor(.gray)
+                    
+                }
+            }
             
         }
-        
         
     }
     
